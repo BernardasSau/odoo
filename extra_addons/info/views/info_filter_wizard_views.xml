@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_info_filter_wizard" model="ir.ui.view">
+        <field name="name">info.filter.wizard.form</field>
+        <field name="model">info.filter.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Filter Information">
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="employee_id"/>
+                </group>
+                <footer>
+                    <button string="Filter" type="object" name="action_filter_infos" class="oe_highlight"/>
+                    <button string="Generate Report" type="object" name="action_generate_report" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_info_filter_wizard" model="ir.actions.act_window">
+        <field name="name">Filter Information</field>
+        <field name="res_model">info.filter.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="info_filter_action_menu" name="Filter Documents" parent="info_management_menu" action="action_info_filter_wizard"/>
+
+</odoo>

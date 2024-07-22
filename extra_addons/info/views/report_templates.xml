@@ -1,0 +1,23 @@
+<odoo>
+    <template id="report_document_management">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Document Management Report</h2>
+                        <p><strong>Title:</strong> <t t-esc="o.name"/></p>
+                        <p><strong>Description:</strong> <t t-esc="o.description"/></p>
+                        <p><strong>Company:</strong> <t t-esc="o.company_id.name"/></p>
+                        <p><strong>Created By:</strong> <t t-esc="o.user_id.name"/></p>
+                        <p><strong>Responsible Employees:</strong>
+                            <t t-foreach="o.employee_ids" t-as="employee">
+                                <t t-esc="employee.name"/>
+                            </t>
+                        </p>
+                        <p><strong>Date Field:</strong> <t t-esc="o.date_field"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

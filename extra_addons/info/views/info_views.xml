@@ -1,0 +1,47 @@
+<odoo>
+    <menuitem id="info_management_menu" name="Information Management" sequence="10"/>
+
+    <record id="view_info_tree" model="ir.ui.view">
+        <field name="name">document.management.tree</field>
+        <field name="model">document.management</field>
+        <field name="arch" type="xml">
+            <tree string="Information">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="company_id"/>
+                <field name="user_id"/>
+                <field name="employee_ids" widget="many2many_tags"/>
+                <field name="date_field"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_info_form" model="ir.ui.view">
+        <field name="name">document.management.form</field>
+        <field name="model">document.management</field>
+        <field name="arch" type="xml">
+            <form string="Documents">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="company_id"/>
+                        <field name="user_id"/>
+                        <field name="employee_ids" widget="many2many_tags"/>
+                        <field name="date_field"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_info_management" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">document.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <menuitem id="info_management_action_menu" name="Documents"
+              parent="info_management_menu" action="action_info_management"/>
+
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <report
+        id="document_management_report"
+        model="document.management"
+        string="Document Management Report"
+        report_type="qweb-pdf"
+        name="info.report_document_management"
+        file="info.report_document_management"
+        attachment_use="False"
+    />
+</odoo>
+
